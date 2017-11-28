@@ -32,7 +32,7 @@ function crawl(day) {
     .done(function() {
       console.log(`Finished crawling day ${day}`)
       if(day < 7) {
-        next = day + 1;
+        var next = day + 1;
         crawl(next);
       } else {
         console.log('All done! Writing to file...')
@@ -43,7 +43,7 @@ function crawl(day) {
         });
 
         fs.writeFile('meetings.csv', result, function() {
-          console.log('Finished writing to file.');
+          console.log('Finished writing to file');
         })
       }
     })
